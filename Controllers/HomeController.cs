@@ -23,9 +23,18 @@ namespace AddressBook.Controllers
             string nameIn = Request.Form["name"];
             string phoneNumberIn = Request.Form["phonenumber"];
             string addressIn = Request.Form["address"];
-            Address New = new Address(nameIn, phoneNumberIn, addressIn);
+            Address newAddress = new Address(nameIn, phoneNumberIn, addressIn);
+            newAddress.PushToList();
             List<Address> allAddress = Address.GetAll();
-            return View(allAddress);
+            return View("form", allAddress);
+        }
+        // Delete saved List
+        [HttpGet("/Form/Delete")]
+        public ActionResult DeleteAll()
+        {
+            Address.ClearAll();
+            List<Address> allAddress = Address.GetAll();
+            return View("form", allAddress);
         }
     }
 }

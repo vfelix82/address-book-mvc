@@ -25,24 +25,19 @@
           <input type="text" name="address" class="form-control">
         </div>
     </div>
+    <button type="submit" class="btn btn-primary btn-lg">Add</button>
   </div>
-  <button type="button" class="btn btn-primary btn-lg">Add</button>
   </form>
 
   <h2>Contacts:</h2>
-
-  <div class="col-md-6">
-    <div id="show-contact">
-      <h2></h2>
-      @* <p>First name: @Model.getName()</p>
-      <p>Last name: @Model.getTitle()</p>
-      <p>Addresses: @Model.getAddress()</p> *@
-      <ul id="addresses">
-
-      </ul>
-    </div>
-  </div>
-
+  <form action="/Form/Delete">
+    <input type="submit" class="btn btn-dark btn-lg" value="Delete All Addresses" />
+  </form>
+  @foreach(var item in Model) {
+  <p>Name:@item.getName()</p>
+  <p>Phone Number: @item.getPhoneNumber()</p>
+  <p>Address: @item.getAddress()</p>
+  }
 </body>
 
 </html>

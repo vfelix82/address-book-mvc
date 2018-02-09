@@ -51,5 +51,10 @@ namespace AddressBook.Models
         {
             _allAddress.Clear();
         }
+        public void PushToList()
+        {
+            _allAddress.Add(this);
+
+        }
     }
 }
