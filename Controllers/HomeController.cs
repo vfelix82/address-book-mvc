@@ -9,7 +9,8 @@ namespace AddressBook.Controllers
         [HttpGet("/")]
         public ActionResult Index()
         {
-            return View();
+            List<Address> allAddress = Address.GetAll();
+            return View(allAddress);
         }
         [HttpGet("/Form")]
         public ActionResult GetForm()
