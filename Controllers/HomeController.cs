@@ -27,7 +27,7 @@ namespace AddressBook.Controllers
             Address newAddress = new Address(nameIn, phoneNumberIn, addressIn);
             newAddress.PushToList();
             List<Address> allAddress = Address.GetAll();
-            return View("form", allAddress);
+            return View("Form", allAddress);
         }
         // Delete saved List
         [HttpGet("/Form/Delete")]
@@ -35,7 +35,7 @@ namespace AddressBook.Controllers
         {
             Address.ClearAll();
             List<Address> allAddress = Address.GetAll();
-            return View("form", allAddress);
+            return View("Form", allAddress);
         }
     }
 }
